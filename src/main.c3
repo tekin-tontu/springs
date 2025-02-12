@@ -110,7 +110,8 @@ fn int main()
        }
 
 
-        rl::beginDrawing();
+        rl::@drawing()
+        {
             rl::clearBackground(rl::RAYWHITE);
 
             rl::drawCircleV(ballPosition, (float)ballRadius, rl::MAROON);
@@ -128,7 +129,7 @@ fn int main()
             rl::drawText(string::tformat_zstr("SpringX: %s", springx), 10, 360, 20, rl::LIGHTGRAY);
             rl::drawText(string::tformat_zstr("SpringY: %s", springy), 370, 360, 20, rl::LIGHTGRAY);
 
-        rl::endDrawing();
+        };
 
     };
 
