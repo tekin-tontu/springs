@@ -83,9 +83,10 @@ fn void Limb._draw(&self) @private {
     for (usz i=0; i < self.segments.size-1; i++) {
         c = self.segments[i].position;
         n = self.segments[i+1].position;
-        rl::drawLineEx(c, n, 20, rl::ORANGE);
-        rl::drawCircleV(n, 20, rl::RED);
-        rl::drawCircleV(n, 10, rl::ORANGE);
+        float width = (float)(20 - (i * 2));
+        rl::drawLineEx(c, n, width, rl::ORANGE);
+        rl::drawCircleV(n, width, rl::RED);
+        rl::drawCircleV(n, width * 0.5, rl::ORANGE);
     }
 }
 
