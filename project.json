@@ -1,16 +1,23 @@
 {
   "langrev": "1",
-  "warnings":  [ "no-unused" ],
-  "dependency-search-paths":  [ "lib" ],
-  "dependencies":  [ "raylib55" ],
-  "authors":  [ "Tekin Tontu <tekin@xzone.com.au>" ],
+  "warnings": ["no-unused"],
+  "dependency-search-paths": ["lib"],
+  "dependencies": ["raylib55", "raygui"],
+  "authors": ["Tekin Tontu <tekin@xzone.com.au>"],
   "version": "0.1.0",
-  "sources":  [ "src/**" ],
-  "test-sources":  [ "test/**" ],
+  "sources": ["src/common/**"],
+  "test-sources": ["test/**"],
   "output": "build",
+  "macos-min-version": "15.0",
+  "macos-sdk-version": "15.0",
   "targets": {
     "springs": {
-      "type": "executable"
+      "type": "executable",
+      "sources": ["src/springs/*"]
+    },
+    "fabrik": {
+      "type": "executable",
+      "sources": ["src/fabrik/*"]
     }
   },
   "cpu": "generic",
