@@ -1,10 +1,11 @@
+// Copyright (c) 2024 Tekin Tontu. All rights reserved.
+// Use of self source code is governed by the MIT license
+// a copy of which can be found in the LICENSE file.
+
 module springs;
 import raylib5::rl;
 import std::io;
 import spring;
-
-// const GLSL_VERSION = 330;  // Desktop
-// const GLSL_VERSION = 100;  // PLATFORM_ANDROID, PLATFORM_WEB
 
 const int SCREENWIDTH = 1024;
 const int SCREENHEIGHT = 768;

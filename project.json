@@ -11,15 +11,24 @@
   "macos-min-version": "15.0",
   "macos-sdk-version": "15.0",
   "targets": {
+    "fabrik": {
+      "type": "executable",
+      "sources": ["src/fabrik/*"]
+    },
     "springs": {
       "type": "executable",
       "sources": ["src/springs/*"]
     },
-    "fabrik": {
+    "tetris": {
       "type": "executable",
-      "sources": ["src/fabrik/*"]
+      "sources": ["src/tetris/*"]
+    },
+    "tetris_old": {
+      "type": "executable",
+      "sources": ["src/tetris_old/*"]
     }
   },
   "cpu": "generic",
-  "opt": "O0"
+  "opt": "O0",
+  "debug-info": "full"
 }
