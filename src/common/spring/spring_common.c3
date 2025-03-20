@@ -1,7 +1,7 @@
 module spring::spring_common;
 import std::io, std::math, raylib5::rl;
 
-fn usz! Vector2.to_format(&self, Formatter* formatter) @dynamic
+fn usz? Vector2.to_format(&self, Formatter* formatter) @dynamic
 {
 	return formatter.printf("{x:%f, y:%f}",self.x, self.y)!;
 }

@@ -2,7 +2,7 @@
 // Use of self source code is governed by the MIT license
 // a copy of which can be found in the LICENSE file.
 
-module spring(<Type>);
+module spring{Type};
 import raylib5::rl, std::io, spring::spring_common;
 
 const float EPSILON = 0.005;
@@ -19,7 +19,7 @@ struct Spring
     bool completed;
 }
 
-fn usz! Spring.to_format(&self, Formatter* formatter) @dynamic
+fn usz? Spring.to_format(&self, Formatter* formatter) @dynamic
 {
 	usz n = formatter.print("{")!;
 	n += formatter.printf("\n\tstart_value:\t%s", self.start_value)!;

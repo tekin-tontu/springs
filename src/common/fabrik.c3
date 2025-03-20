@@ -11,9 +11,9 @@ struct EndEffector(Printable) {
     float length;
 }
 
-def DrawFn = fn void(Limb* limb);
+alias DrawFn = fn void(Limb* limb);
 
-fn usz! EndEffector.to_format(&self, Formatter* formatter) @dynamic
+fn usz? EndEffector.to_format(&self, Formatter* formatter) @dynamic
 {
 	usz n = formatter.print("{")!;
 	n += formatter.printf("\n\tposition:\t{%f,%f}", self.position.x, self.position.y)!;
@@ -30,14 +30,14 @@ macro EndEffector endEffector(float x, float y, float l) {
 }
 
 struct Limb(Printable) {
-    List(<EndEffector>) segments;
+    List{EndEffector} segments;
     Vector2 target;
     Vector2 root;
     bool fixed_root;
     DrawFn custom_draw;
 }
 
-fn usz! Limb.to_format(&self, Formatter* formatter) @dynamic
+fn usz? Limb.to_format(&self, Formatter* formatter) @dynamic
 {
 	usz n = formatter.print("{")!;
 	n += formatter.printf("\n\tsegments:\t%s", self.segments)!;
@@ -50,7 +50,7 @@ fn usz! Limb.to_format(&self, Formatter* formatter) @dynamic
 
 
 macro Limb limb(Vector2 root, int numEffectors,  float width, float height, float segment_length=150, float mul=0.8, bool fixed_root=true, DrawFn custom_draw={}) {
-    List(<EndEffector>) segments;
+    List{EndEffector} segments;
 
     float sum = 0;
 

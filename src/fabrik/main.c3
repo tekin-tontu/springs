@@ -10,7 +10,7 @@ const int SCREENWIDTH = 1240;
 const int SCREENHEIGHT = 1000;
 
 
-def SpringVector2 = Spring(<Vector2>);
+alias SpringVector2 = Spring{Vector2};
 
 fn void noroot_draw(Limb* self)
 {
@@ -53,8 +53,8 @@ fn int main()
     }
 
     Vector2 menupos = { 0, 0 };
-    SpringVector2 spring = spring::new(<Vector2>)({}, {}, stiffness: 140.0, damping: 8, mass: 0.2);
-    SpringVector2 menuanim = spring::new(<Vector2>)(menupos, menupos);
+    SpringVector2 spring = spring::new{Vector2}({}, {}, stiffness: 140.0, damping: 8, mass: 0.2);
+    SpringVector2 menuanim = spring::new{Vector2}(menupos, menupos);
     spring.end_value = {SCREENWIDTH * 0.5, SCREENHEIGHT * 0.5};
 
     rl::setTargetFPS(60);
